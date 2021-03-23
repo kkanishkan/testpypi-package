@@ -10,7 +10,7 @@ setup(
         description="Test Package to try functionality",
         long_description=long_description,
         long_description_content_type="text/markdown",
-        url="https://github.com/wangonya/contacts-cli",
+        url="https://github.com/kkanishkan/testpypi-package",
         author="Kanishkan Kukarajah",
         author_email="kanishkan77@gmail.com",
         license="MIT",
@@ -19,12 +19,9 @@ setup(
             "Programming Language :: Python :: 3",
             "Programming Language :: Python :: 3.7",
         ],
-        install_requires=[
-            "Click",
-            "requests",
-            ],
+        install_requires=[],
         entry_points="""
         [console_scripts]
-        contacts=app:cli
+        testPackage=testPackage.__main__:main
         """,
         )
