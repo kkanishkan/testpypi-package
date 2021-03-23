@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Kanishkan_Test"
+name = "Kanishkan-Test"
 version = "0.2.2"
 description = "Test Package to try functionality"
 readme = "README.md"
