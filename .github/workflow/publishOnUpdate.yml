@@ -1,0 +1,31 @@
+name: Publish Release
+on: 
+  push:
+    tags:
+      - 'v*'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: Install setuptools
+        run: |
+          pip install setuptools
+      - name: Install wheel
+        run: |
+          pip install wheel
+      - name: Install twine
+        run: |
+          pip install twine
+      - name: Build distribution package
+        run: |
+          python setup.py sdist bdist_wheel
+      - name: Upload Package
+        with:
+          username: '${{ secrets.PYPI_USERNAME }}'
+          password: '${{ secrets.PYPI_PASSWORD }}'
+        run: |
+          twine upload --repository-url https://test.pypi.org/legacy/ dist/*
