@@ -1,0 +1,4 @@
+bin/
+include/
+lib/
+testPackage/__pycache__
