@@ -18,7 +18,7 @@ jobs:
           pip install poetry
       - name: Add testpypi repo
         run: |
-          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry config repositories.testpypi https://test.pypi.org/simple/
       - name: Build package
         run: |
           poetry build
